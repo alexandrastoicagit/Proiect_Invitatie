@@ -209,7 +209,7 @@ button {
   object-fit: cover;
 
   opacity: 0.18;
-  z-index: -2;
+  z-index: -10;
 }
 
 body::after {
@@ -221,7 +221,7 @@ body::after {
   height: 100%;
 
   background: rgba(255,255,255,0.7);
-  z-index: -1;
+  z-index: -5;
 }
 
 #countdown {
@@ -248,4 +248,8 @@ body::after {
 .time-box small {
   font-size: 12px;
   color: #777;
+}
+
+.overlay {
+  background: transparent !important;
 }
