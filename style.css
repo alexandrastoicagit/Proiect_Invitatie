@@ -210,3 +210,29 @@ button {
   opacity: 0.25;
   z-index: -1;
 }
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.time-box {
+  text-align: center;
+  background: rgba(255,255,255,0.6);
+  padding: 10px 14px;
+  border-radius: 10px;
+  min-width: 60px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 22px;
+  color: #5f6f5a;
+}
+
+.time-box small {
+  font-size: 12px;
+  color: #777;
+}

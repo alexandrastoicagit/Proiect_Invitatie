@@ -25,7 +25,7 @@ setInterval(() => {
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
 
   document.getElementById("countdown").innerText =
-    days + " zile • " + hours + " ore";
+    days + " zile • " + hours + " ore"+ minutes + " minute"+ seconds + " secunde";
 }, 1000);
 
 /* RSVP */
