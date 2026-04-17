@@ -6,7 +6,6 @@ function openInvite() {
     document.getElementById("content").classList.remove("hidden");
   }, 900);
 
-  document.getElementById("music").play();
 }
 
 /* COUNTDOWN */
