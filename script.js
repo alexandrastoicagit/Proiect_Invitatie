@@ -42,17 +42,19 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
 
   fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
   method: "POST",
-  body: "test"
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "text/plain"
+  },
+  body: JSON.stringify({
+    name: this.name.value,
+    guests: this.guests.value,
+    status: this.status.value
   })
-  .then(res => res.text())
-  .then(text => {
-    console.log("RESPONSE:", text);
-    alert("A mers request-ul");
-  })
-  .catch(err => {
-    console.error(err);
-    alert("NU ajunge request-ul");
-  });
+});
+
+alert("Mulțumim pentru confirmare ❤️");
+this.reset();
 });
 
 });
