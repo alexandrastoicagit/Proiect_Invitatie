@@ -34,7 +34,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE", {
+  fetch("https://script.google.com/macros/s/AKfycbxPGnoSXMjMxbVJdr32CLXlEfhsMDj8sXpPvkDY1YcsYvU2-rFA7EfLeD2snCIfwPwqTQ/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })
