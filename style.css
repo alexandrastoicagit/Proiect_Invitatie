@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #f5f1e8;
+  transition: opacity 0.6s ease;
 }
 
 /* SIGILIU */
@@ -21,7 +22,7 @@ body {
 .wax-seal {
   width: 90px;
   height: 90px;
-  background: radial-gradient(circle, #e6d7b9, #d6c5a3);
+  background: radial-gradient(circle, #a6af92, #989e89);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -33,10 +34,15 @@ body {
   transition: transform 0.6s ease, opacity 0.6s;
 }
 
-/* ANIMATIE RUPERE */
+/* ANIMAȚIE CÂND SE DESCHIDE */
 .overlay.open .wax-seal {
-  transform: scale(1.3);
+  transform: scale(1.4) rotate(10deg);
   opacity: 0;
+}
+
+.overlay.open p {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 /* CONTINUT */
