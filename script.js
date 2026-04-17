@@ -40,21 +40,14 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
-  method: "POST",
-  mode: "no-cors",
-  headers: {
-    "Content-Type": "text/plain"
-  },
-  body: JSON.stringify({
-    name: this.name.value,
-    guests: this.guests.value,
-    status: this.status.value
+  fetch("https://script.google.com/macros/s/AKfycbxPGnoSXMjMxbVJdr32CLXlEfhsMDj8sXpPvkDY1YcsYvU2-rFA7EfLeD2snCIfwPwqTQ/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
   })
-});
-
-alert("Mulțumim pentru confirmare ❤️");
-this.reset();
+  .then(() => {
+    alert("Mulțumim pentru confirmare! 💌");
+    this.reset();
+  });
 });
 
 });
