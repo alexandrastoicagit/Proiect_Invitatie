@@ -1,15 +1,12 @@
 function openInvite() {
-  const envelope = document.querySelector('.envelope-wrapper');
-
-  envelope.classList.add('open');
+  document.querySelector('.overlay').classList.add('open');
 
   setTimeout(() => {
-    envelope.style.display = "none";
+    document.querySelector('.overlay').style.display = "none";
     document.getElementById("content").classList.remove("hidden");
-  }, 900);
+  }, 1000);
 
-  const music = document.getElementById("music");
-  music.play();
+  document.getElementById("music").play();
 }
 
 /* COUNTDOWN */

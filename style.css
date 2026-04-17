@@ -1,157 +1,142 @@
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(135deg, #ffffff, #f3eadf);
+  font-family: 'Libre Baskerville', serif;
+  background: linear-gradient(135deg, #ffffff, #f2f2f0); /* alb sidefat */
 }
 
 /* =========================
-   PLIC (OVERLAY NOU)
+   PLIC FULL SCREEN LUXURY
 ========================= */
 
 .overlay {
   height: 100vh;
+  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* container plic */
+/* plic full screen */
 .seal-container {
   position: relative;
-  width: 320px;
-  height: 200px;
-  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(120deg, #f7f7f5, #e9e6e1);
 }
 
-/* baza plicului */
+/* partea frontala plic (vizibil partial) */
 .seal-container::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 60%;
   height: 100%;
-  background: #f7f1e6; /* bej elegant */
-  border: 1px solid #e6dccb;
-  border-radius: 6px;
-  bottom: 0;
+  background: #f3eee6;
+  right: 0;
+  top: 0;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: all 0.9s ease;
 }
 
-/* capac plic */
+/* capac lateral */
 .seal-container::after {
   content: "";
   position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 160px solid transparent;
-  border-right: 160px solid transparent;
-  border-bottom: 110px solid #ffffff; /* alb voal */
-  top: 0;
+  width: 60%;
+  height: 100%;
   left: 0;
-  transform-origin: top;
-  transition: transform 0.8s ease;
+  top: 0;
+  background: #ffffff;
+  clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
+  transform-origin: left;
+  transition: transform 1s ease;
 }
 
 /* SIGILIU */
 .wax-seal {
-  width: 60px;
-  height: 60px;
-  background: #b7d8c5; /* verde deschis elegant */
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, #e8dcc6, #d8ccb0);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Great Vibes', cursive;
-  font-size: 20px;
-  color: #2f4f3f;
   position: absolute;
-  top: 55%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Great Vibes', cursive;
+  color: #5f6f5a;
+  font-size: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* text hint */
-.seal-container p {
-  position: absolute;
-  bottom: -40px;
-  width: 100%;
-  text-align: center;
-  color: #777;
-  font-size: 14px;
-  margin: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* =========================
-   ANIMAȚIE DESCHIDERE
-========================= */
-
+/* DESCHIDERE LATERAL */
 .overlay.open .seal-container::after {
-  transform: rotateX(180deg);
+  transform: translateX(-100%);
 }
 
 .overlay.open .wax-seal {
-  transform: translate(-50%, -50%) scale(1.4);
   opacity: 0;
-}
-
-.overlay.open p {
-  opacity: 0;
+  transform: scale(1.4);
 }
 
 /* =========================
    CONȚINUT INVITAȚIE
 ========================= */
 
-.hidden {
-  display: none;
-}
+.hidden { display: none; }
 
 .veil {
   min-height: 100vh;
-  background: #ffffff;
+  background: linear-gradient(180deg, #ffffff, #f4f2ee);
   padding: 40px 20px;
   text-align: center;
-  animation: fadeIn 1.5s ease;
 }
 
-/* TEXT */
+/* NUME (BOHEME FLORAL) */
 .names {
-  font-family: 'Great Vibes', cursive;
-  font-size: 44px;
-  color: #6b7d6d;
+  font-family: 'Great Vibes', cursive; /* înlocuiești cu Boheme Floral dacă ai */
+  font-size: 52px;
+  color: #5f6f5a;
 }
 
-.subtitle {
-  color: #9a9a9a;
-}
-
-.text {
-  max-width: 420px;
+/* TEXT INVITATIE */
+.invite-text {
+  font-family: 'Libre Baskerville', serif;
+  max-width: 500px;
   margin: 20px auto;
-  color: #555;
+  color: #444;
 }
 
+/* DATE */
 .date {
-  margin: 20px 0;
   color: #333;
-}
-
-.countdown {
-  margin-bottom: 30px;
+  margin: 20px 0;
 }
 
 /* EVENIMENTE */
 .event {
   margin: 30px 0;
+  padding: 10px;
 }
 
-iframe {
-  width: 100%;
-  height: 200px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
+.event-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event a {
+  color: #5f6f5a;
+  text-decoration: none;
+}
+
+/* ICONITE */
+.icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 /* FORM */
@@ -171,14 +156,8 @@ input, select {
 
 button {
   padding: 12px;
-  background: #6b7d6d;
+  background: #5f6f5a;
   color: white;
   border: none;
   border-radius: 6px;
-}
-
-/* ANIMATII */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
