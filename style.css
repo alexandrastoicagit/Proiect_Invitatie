@@ -100,13 +100,13 @@ body {
   background: linear-gradient(180deg, #ffffff, #f4f2ee);
   padding: 40px 20px;
   text-align: center;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair', serif;
   color: #3e3e3e;
 }
 
 /* NUME (BOHEME FLORAL) */
 .names {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Tangerine', cursive;
   font-size: 56px;
   background: linear-gradient(45deg, #c6b38e, #e8dcc6);
   -webkit-background-clip: text;
@@ -115,7 +115,7 @@ body {
 
 /* TEXT INVITATIE */
 .invite-text {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Playfair', serif;
   max-width: 500px;
   margin: 20px auto;
   color: #444;
