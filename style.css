@@ -1,58 +1,115 @@
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background: #f5f1e8;
+  background: linear-gradient(135deg, #ffffff, #f3eadf);
 }
 
-/* OVERLAY */
+/* =========================
+   PLIC (OVERLAY NOU)
+========================= */
+
 .overlay {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f1e8;
-  transition: opacity 0.6s ease;
+}
+
+/* container plic */
+.seal-container {
+  position: relative;
+  width: 320px;
+  height: 200px;
+  cursor: pointer;
+}
+
+/* baza plicului */
+.seal-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #f7f1e6; /* bej elegant */
+  border: 1px solid #e6dccb;
+  border-radius: 6px;
+  bottom: 0;
+}
+
+/* capac plic */
+.seal-container::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-bottom: 110px solid #ffffff; /* alb voal */
+  top: 0;
+  left: 0;
+  transform-origin: top;
+  transition: transform 0.8s ease;
 }
 
 /* SIGILIU */
-.seal-container {
-  text-align: center;
-}
-
 .wax-seal {
-  width: 90px;
-  height: 90px;
-  background: radial-gradient(circle, #a6af92, #989e89);
+  width: 60px;
+  height: 60px;
+  background: #b7d8c5; /* verde deschis elegant */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Great Vibes';
-  font-size: 28px;
-  color: #6b7d6d;
-  margin: auto;
-  transition: transform 0.6s ease, opacity 0.6s;
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+  color: #2f4f3f;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* ANIMAȚIE CÂND SE DESCHIDE */
+/* text hint */
+.seal-container p {
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* =========================
+   ANIMAȚIE DESCHIDERE
+========================= */
+
+.overlay.open .seal-container::after {
+  transform: rotateX(180deg);
+}
+
 .overlay.open .wax-seal {
-  transform: scale(1.4) rotate(10deg);
+  transform: translate(-50%, -50%) scale(1.4);
   opacity: 0;
 }
 
 .overlay.open p {
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
-/* CONTINUT */
+/* =========================
+   CONȚINUT INVITAȚIE
+========================= */
+
 .hidden {
   display: none;
 }
 
 .veil {
   min-height: 100vh;
-  background: white;
+  background: #ffffff;
   padding: 40px 20px;
   text-align: center;
   animation: fadeIn 1.5s ease;
@@ -66,16 +123,18 @@ body {
 }
 
 .subtitle {
-  color: #999;
+  color: #9a9a9a;
 }
 
 .text {
   max-width: 420px;
   margin: 20px auto;
+  color: #555;
 }
 
 .date {
   margin: 20px 0;
+  color: #333;
 }
 
 .countdown {

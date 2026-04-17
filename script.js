@@ -1,23 +1,12 @@
 function openInvite() {
-  const overlay = document.querySelector('.overlay');
-  const seal = document.querySelector('.wax-seal');
+  const envelope = document.querySelector('.envelope-wrapper');
 
-  // pornește animația
-  overlay.classList.add('open');
+  envelope.classList.add('open');
 
-  // forțează reflow (important ca animația să se vadă)
-  seal.offsetHeight;
-
-  // după animație, deschide invitația
   setTimeout(() => {
-    overlay.style.opacity = "0";
-
-    setTimeout(() => {
-      overlay.style.display = "none";
-      document.getElementById('content').classList.remove('hidden');
-    }, 500);
-
-  }, 600);
+    envelope.style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+  }, 900);
 
   const music = document.getElementById("music");
   music.play();
