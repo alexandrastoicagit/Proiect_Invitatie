@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitație Nuntă</title>
+  <title>Alexandra & Alexandru</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -14,41 +14,49 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- INVITATIE CU SIGILIU -->
+<!-- SIGILIU -->
 <div class="overlay" onclick="openInvite()">
-  <div class="invitation-card">
-    <div class="wax-seal"></div>
-    <p class="open-text">Deschide invitația</p>
+  <div class="seal-container">
+    <div class="wax-seal">
+      <span>A&A</span>
+    </div>
+    <p>Deschide invitația</p>
   </div>
 </div>
 
 <!-- CONTINUT -->
 <div id="content" class="hidden">
-
   <div class="veil">
 
     <h1 class="names">Alexandra & Alexandru</h1>
     <p class="subtitle">Păun-Stoica</p>
 
     <p class="text">
-      Cu multă bucurie vă invităm să celebrați alături de noi ziua nunții noastre
+      Vă invităm să fiți alături de noi într-una dintre cele mai importante zile ale vieții noastre
     </p>
 
     <h2 class="date">11 Septembrie 2027</h2>
 
     <div id="countdown" class="countdown"></div>
 
-    <!-- EVENIMENTE -->
+    <!-- CEREMONIE -->
     <div class="event">
       <h3>Ceremonia religioasă</h3>
       <p>Ora 16:00</p>
-      <a href="https://maps.app.goo.gl/t4FAhu7SqMm7ARCG9" target="_blank">Vezi locația</a>
+
+      <iframe 
+        src="https://maps.google.com/maps?q=t4FAhu7SqMm7ARCG9&output=embed">
+      </iframe>
     </div>
 
+    <!-- PETRECERE -->
     <div class="event">
       <h3>Petrecerea</h3>
       <p>Ora 18:30</p>
-      <a href="https://maps.app.goo.gl/5PUygjoMzNtHvifR6" target="_blank">Vezi locația</a>
+
+      <iframe 
+        src="https://maps.google.com/maps?q=5PUygjoMzNtHvifR6&output=embed">
+      </iframe>
     </div>
 
     <!-- RSVP -->
@@ -70,7 +78,6 @@
     </div>
 
   </div>
-
 </div>
 
 <script src="script.js"></script>

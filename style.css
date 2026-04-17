@@ -4,44 +4,39 @@ body {
   background: #f5f1e8;
 }
 
-/* FULL SCREEN */
+/* OVERLAY */
 .overlay {
   height: 100vh;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #f5f1e8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* INVITATIE */
-.invitation-card {
-  width: 280px;
-  height: 180px;
-  background: #fffdf8;
-  border: 1px solid #e5dccb;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+/* SIGILIU */
+.seal-container {
+  text-align: center;
 }
 
-/* SIGILIU CEARA */
 .wax-seal {
-  width: 50px;
-  height: 50px;
-  background: #e6d7b9;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, #e6d7b9, #d6c5a3);
   border-radius: 50%;
-  position: absolute;
-  top: -25px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Great Vibes';
+  font-size: 28px;
+  color: #6b7d6d;
+  margin: auto;
+  transition: transform 0.6s ease, opacity 0.6s;
 }
 
-/* TEXT */
-.open-text {
-  font-size: 16px;
-  color: #6b6b6b;
+/* ANIMATIE RUPERE */
+.overlay.open .wax-seal {
+  transform: scale(1.3);
+  opacity: 0;
 }
 
 /* CONTINUT */
@@ -54,21 +49,22 @@ body {
   background: white;
   padding: 40px 20px;
   text-align: center;
+  animation: fadeIn 1.5s ease;
 }
 
+/* TEXT */
 .names {
   font-family: 'Great Vibes', cursive;
-  font-size: 42px;
+  font-size: 44px;
   color: #6b7d6d;
 }
 
 .subtitle {
   color: #999;
-  margin-top: -10px;
 }
 
 .text {
-  max-width: 400px;
+  max-width: 420px;
   margin: 20px auto;
 }
 
@@ -82,13 +78,15 @@ body {
 
 /* EVENIMENTE */
 .event {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
-.event a {
-  color: #6b7d6d;
-  text-decoration: none;
-  border-bottom: 1px solid #ccc;
+iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 /* FORM */
@@ -96,12 +94,12 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 300px;
+  max-width: 320px;
   margin: auto;
 }
 
 input, select {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
 }
@@ -112,4 +110,10 @@ button {
   color: white;
   border: none;
   border-radius: 6px;
+}
+
+/* ANIMATII */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

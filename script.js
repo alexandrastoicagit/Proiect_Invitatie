@@ -1,6 +1,11 @@
 function openInvite() {
-  document.querySelector('.overlay').style.display = 'none';
-  document.getElementById('content').classList.remove('hidden');
+  const overlay = document.querySelector('.overlay');
+  overlay.classList.add('open');
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    document.getElementById('content').classList.remove('hidden');
+  }, 600);
 
   document.getElementById("music").play();
 }
@@ -13,7 +18,7 @@ setInterval(() => {
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    document.getElementById("countdown").innerText = "Astăzi este ziua evenimentului";
+    document.getElementById("countdown").innerText = "Ziua evenimentului";
     return;
   }
 
