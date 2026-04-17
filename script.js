@@ -40,7 +40,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-fetch("https://script.google.com/macros/s/AKfycbwIDsOvCudwZmcg_MQjs5fR2jqcvSUDAkHBGirBIA5PXSzV6Ma4KFyG7AZ5E1D0Q7gaAQ/exec", {
+fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
   method: "POST",
   body: JSON.stringify(data)
 })
