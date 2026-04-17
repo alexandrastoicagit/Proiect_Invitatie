@@ -2,47 +2,52 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <title>Invitație Nuntă</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitație Nuntă</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="envelope" onclick="openInvite()">
-  <div class="cover">Deschide invitația 💌</div>
-</div>
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-<div id="invitation" class="hidden">
-
-  <h1 class="names">Alexandra & Alexandru</h1>
-  <p class="subtitle">Păun-Stoica</p>
-
-  <p class="text">
-    Cu multă bucurie vă invităm să celebrați alături de noi ziua nunții noastre
-  </p>
-
-  <h2 class="date">11 Septembrie 2027</h2>
-
-  <div id="countdown" class="countdown"></div>
-
-  <div class="section">
-    <h3>Confirmare prezență</h3>
-
-    <form id="rsvpForm">
-      <input type="text" placeholder="Nume" required>
-      <input type="number" placeholder="Nr. persoane" required>
-
-      <select required>
-        <option value="">Selectează</option>
-        <option value="da">Confirm</option>
-        <option value="nu">Nu pot veni</option>
-      </select>
-
-      <button type="submit">Trimite</button>
-    </form>
+<div class="book" onclick="openBook()">
+  <div class="page cover">
+    <h2>Deschide invitația 💌</h2>
   </div>
 
+  <div class="page inside">
+    <h1 class="names">Alexandra & Alexandru</h1>
+    <p class="subtitle">Păun-Stoica</p>
+
+    <p class="text">
+      Cu multă bucurie vă invităm să celebrați alături de noi ziua nunții noastre
+    </p>
+
+    <h2 class="date">11 Septembrie 2027</h2>
+
+    <div id="countdown" class="countdown"></div>
+
+    <div class="section">
+      <h3>Confirmare prezență</h3>
+
+      <form id="rsvpForm">
+        <input type="text" name="name" placeholder="Nume" required>
+        <input type="number" name="guests" placeholder="Nr. persoane" required>
+
+        <select name="status" required>
+          <option value="">Selectează</option>
+          <option value="Confirm">Confirm</option>
+          <option value="Nu pot veni">Nu pot veni</option>
+        </select>
+
+        <button type="submit">Trimite</button>
+      </form>
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>

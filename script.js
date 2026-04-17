@@ -1,6 +1,8 @@
-function openInvite() {
-  document.querySelector('.envelope').style.display = 'none';
-  document.getElementById('invitation').classList.remove('hidden');
+function openBook() {
+  document.querySelector('.book').classList.add('open');
+
+  const music = document.getElementById("music");
+  music.play();
 }
 
 /* COUNTDOWN */
@@ -17,16 +19,27 @@ setInterval(() => {
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
   document.getElementById("countdown").innerText =
-    `${days} zile • ${hours} ore • ${minutes} minute`;
+    `${days} zile • ${hours} ore`;
 }, 1000);
 
-/* FORM */
+/* RSVP → GOOGLE SHEETS */
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Mulțumim pentru confirmare! 💌");
 
-  // Aici poți conecta backend (Formspree / Firebase etc.)
+  const data = {
+    name: this.name.value,
+    guests: this.guests.value,
+    status: this.status.value
+  };
+
+  fetch("PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("Mulțumim pentru confirmare! 💌");
+    this.reset();
+  });
 });
