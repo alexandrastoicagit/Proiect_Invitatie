@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #f5f1e8;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+/* Envelope */
+.envelope {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e8dfcf;
+  cursor: pointer;
+}
+
+.cover {
+  padding: 30px 60px;
+  border: 1px solid #c2b8a3;
+  background: #fffaf3;
+  font-size: 24px;
+  border-radius: 8px;
+}
+
+/* Invitation */
+.hidden {
+  display: none;
+}
+
+#invitation {
+  padding: 50px 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #6b7d6d;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-top: -10px;
+  color: #8c8c8c;
+}
+
+.text {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
+.date {
+  font-size: 26px;
+  margin: 20px 0;
+}
+
+.countdown {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Form */
+.section {
+  margin-top: 40px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: auto;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #d6cfc2;
+  border-radius: 6px;
+  background: #fff;
+}
+
+button {
+  padding: 12px;
+  background: #6b7d6d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5a6b5c;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
