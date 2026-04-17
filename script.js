@@ -40,24 +40,31 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwIDsOvCudwZmcg_MQjs5fR2jqcvSUDAkHBGirBIA5PXSzV6Ma4KFyG7AZ5E1D0Q7gaAQ/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(res => {
+fetch("https://script.google.com/macros/s/AKfycbwIDsOvCudwZmcg_MQjs5fR2jqcvSUDAkHBGirBIA5PXSzV6Ma4KFyG7AZ5E1D0Q7gaAQ/exec", {
+  method: "POST",
+  body: JSON.stringify(data)
+})
+.then(res => res.text())
+.then(text => {
+  try {
+    const res = JSON.parse(text);
+
     if (res.result === "success") {
       alert("Mulțumim pentru confirmare ❤️");
-      this.reset();
-    } else {
-      alert("Eroare: " + res.message);
+      document.getElementById("rsvpForm").reset();
+    } 
+    else if (res.result === "duplicate") {
+      alert("Ai completat deja formularul 🙂");
+    } 
+    else {
+      alert("Eroare: " + (res.message || "necunoscută"));
     }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Eroare de conexiune");
-  });
+  } catch (e) {
+    console.error("Răspuns invalid:", text);
+    alert("Eroare server");
+  }
+})
+.catch(err => {
+  console.error(err);
+  alert("Eroare de conexiune");
 });
