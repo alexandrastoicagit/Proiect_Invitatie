@@ -34,20 +34,74 @@
     <h3>Nași</h3>
     <p>Cristina & Cristi Prodan</p>
 
-    <h3>Părinții miresei</h3>
-    <p>Adina & Cristi Stoica</p>
+    <div class="parents">
+      <div class="parent-block left">
+        <h3>Părinții miresei</h3>
+        <p>Adina & Cristi Stoica</p>
+      </div>
 
-    <h3>Părinții mirelui</h3>
-    <p>Oana & Cristi Păun</p>
+      <div class="parent-block right">
+        <h3>Părinții mirelui</h3>
+        <p>Oana & Cristi Păun</p>
+      </div>
+    </div>
 
     <h2 class="date">11 Septembrie 2027</h2>
 
     <div id="countdown" class="countdown"></div>
 
+    <script>
+
+  // Data țintă (ex: 1 ianuarie 2027)
+
+  const targetDate = new Date("Sep 11, 2027 16:00:00").getTime();
+
+  const countdownFunction = setInterval(function() {
+
+    const now = new Date().getTime();
+
+    const distance = targetDate - now;
+
+    // Calcul timp
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Afișare
+
+    document.getElementById("countdown").innerHTML =
+
+      days + " zile " +
+
+      hours + " ore " +
+
+      minutes + " minute " +
+
+      seconds + " secunde";
+
+    // Dacă timpul a expirat
+
+    if (distance < 0) {
+
+      clearInterval(countdownFunction);
+
+      document.getElementById("countdown").innerHTML = "A expirat!";
+
+    }
+
+  }, 1000);
+
+</script>
+
     <!-- CEREMONIE -->
     <div class="event">
       <div class="event-title">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/484/484167.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3176/3176363.png">
         Biserica
       </div>
       <p>Ora 16:00</p>
@@ -58,7 +112,7 @@
     <!-- PETRECERE -->
     <div class="event">
       <div class="event-title">
-        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png">
         Restaurant / Petrecere
       </div>
       <p>Ora 18:30</p>
@@ -89,4 +143,7 @@
 
 <script src="script.js"></script>
 </body>
+<video autoplay muted loop id="bg-video">
+  <source src="https://cdn.coverr.co/videos/coverr-white-flowers-1573/1080p.mp4" type="video/mp4">
+</video>
 </html>
