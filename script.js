@@ -41,30 +41,17 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   };
 
   fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
+  method: "POST",
+  body: "test"
   })
   .then(res => res.text())
   .then(text => {
-    try {
-      const res = JSON.parse(text);
-
-      if (res.result === "success") {
-        alert("Mulțumim ❤️");
-        this.reset();
-      } else if (res.result === "duplicate") {
-        alert("Deja ai completat 🙂");
-      } else {
-        alert("Eroare");
-      }
-
-    } catch (e) {
-      console.error(text);
-      alert("Eroare server");
-    }
+    console.log("RESPONSE:", text);
+    alert("A mers request-ul");
   })
-  .catch(() => {
-    alert("Eroare de conexiune");
+  .catch(err => {
+    console.error(err);
+    alert("NU ajunge request-ul");
   });
 });
 
