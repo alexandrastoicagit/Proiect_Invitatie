@@ -1,19 +1,19 @@
-function openBook() {
-  document.querySelector('.book').classList.add('open');
+function openInvite() {
+  document.querySelector('.overlay').style.display = 'none';
+  document.getElementById('content').classList.remove('hidden');
 
-  const music = document.getElementById("music");
-  music.play();
+  document.getElementById("music").play();
 }
 
 /* COUNTDOWN */
-const weddingDate = new Date("2027-09-11T17:00:00").getTime();
+const weddingDate = new Date("2027-09-11T16:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
   const diff = weddingDate - now;
 
   if (diff <= 0) {
-    document.getElementById("countdown").innerText = "Astăzi este ziua cea mare! 💍";
+    document.getElementById("countdown").innerText = "Astăzi este ziua evenimentului";
     return;
   }
 
@@ -21,10 +21,10 @@ setInterval(() => {
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
 
   document.getElementById("countdown").innerText =
-    `${days} zile • ${hours} ore`;
+    days + " zile • " + hours + " ore";
 }, 1000);
 
-/* RSVP → GOOGLE SHEETS */
+/* RSVP */
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -34,12 +34,11 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbxPGnoSXMjMxbVJdr32CLXlEfhsMDj8sXpPvkDY1YcsYvU2-rFA7EfLeD2snCIfwPwqTQ/exec", {
+  fetch("PASTE_GOOGLE_SCRIPT_URL", {
     method: "POST",
     body: JSON.stringify(data)
-  })
-  .then(() => {
-    alert("Mulțumim pentru confirmare! 💌");
+  }).then(() => {
+    alert("Mulțumim pentru confirmare");
     this.reset();
   });
 });

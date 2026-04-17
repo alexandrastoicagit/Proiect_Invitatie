@@ -1,80 +1,94 @@
 body {
   margin: 0;
-  background: #f5f1e8;
   font-family: 'Playfair Display', serif;
+  background: #f5f1e8;
+}
+
+/* FULL SCREEN */
+.overlay {
+  height: 100vh;
+  width: 100%;
+  background: #f5f1e8;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-/* BOOK EFFECT */
-.book {
-  width: 320px;
-  height: 500px;
-  perspective: 1500px;
-  cursor: pointer;
+/* INVITATIE */
+.invitation-card {
+  width: 280px;
+  height: 180px;
+  background: #fffdf8;
+  border: 1px solid #e5dccb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.page {
-  width: 100%;
-  height: 100%;
+/* SIGILIU CEARA */
+.wax-seal {
+  width: 50px;
+  height: 50px;
+  background: #e6d7b9;
+  border-radius: 50%;
   position: absolute;
-  border-radius: 10px;
-  backface-visibility: hidden;
-  transition: transform 1s;
-  padding: 20px;
-  box-sizing: border-box;
+  top: -25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.cover {
-  background: #e8dfcf;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-origin: left;
+/* TEXT */
+.open-text {
+  font-size: 16px;
+  color: #6b6b6b;
 }
 
-.inside {
-  background: #fffaf3;
-  transform: rotateY(180deg);
-  overflow-y: auto;
+/* CONTINUT */
+.hidden {
+  display: none;
 }
 
-/* OPEN STATE */
-.book.open .cover {
-  transform: rotateY(-180deg);
-}
-
-.book.open .inside {
-  transform: rotateY(0);
+.veil {
+  min-height: 100vh;
+  background: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .names {
   font-family: 'Great Vibes', cursive;
-  font-size: 36px;
+  font-size: 42px;
   color: #6b7d6d;
-  text-align: center;
 }
 
 .subtitle {
-  text-align: center;
-  color: #8c8c8c;
+  color: #999;
+  margin-top: -10px;
 }
 
 .text {
-  text-align: center;
-  margin: 20px 0;
+  max-width: 400px;
+  margin: 20px auto;
 }
 
 .date {
-  text-align: center;
+  margin: 20px 0;
 }
 
 .countdown {
-  text-align: center;
-  margin: 15px 0;
+  margin-bottom: 30px;
+}
+
+/* EVENIMENTE */
+.event {
+  margin: 20px 0;
+}
+
+.event a {
+  color: #6b7d6d;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
 
 /* FORM */
@@ -82,11 +96,13 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 300px;
+  margin: auto;
 }
 
 input, select {
   padding: 10px;
-  border: 1px solid #d6cfc2;
+  border: 1px solid #ddd;
   border-radius: 6px;
 }
 

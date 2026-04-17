@@ -2,7 +2,7 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitație Nuntă</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -14,12 +14,19 @@
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="book" onclick="openBook()">
-  <div class="page cover">
-    <h2>Deschide invitația 💌</h2>
+<!-- INVITATIE CU SIGILIU -->
+<div class="overlay" onclick="openInvite()">
+  <div class="invitation-card">
+    <div class="wax-seal"></div>
+    <p class="open-text">Deschide invitația</p>
   </div>
+</div>
 
-  <div class="page inside">
+<!-- CONTINUT -->
+<div id="content" class="hidden">
+
+  <div class="veil">
+
     <h1 class="names">Alexandra & Alexandru</h1>
     <p class="subtitle">Păun-Stoica</p>
 
@@ -31,12 +38,26 @@
 
     <div id="countdown" class="countdown"></div>
 
+    <!-- EVENIMENTE -->
+    <div class="event">
+      <h3>Ceremonia religioasă</h3>
+      <p>Ora 16:00</p>
+      <a href="https://maps.app.goo.gl/t4FAhu7SqMm7ARCG9" target="_blank">Vezi locația</a>
+    </div>
+
+    <div class="event">
+      <h3>Petrecerea</h3>
+      <p>Ora 18:30</p>
+      <a href="https://maps.app.goo.gl/5PUygjoMzNtHvifR6" target="_blank">Vezi locația</a>
+    </div>
+
+    <!-- RSVP -->
     <div class="section">
       <h3>Confirmare prezență</h3>
 
       <form id="rsvpForm">
         <input type="text" name="name" placeholder="Nume" required>
-        <input type="number" name="guests" placeholder="Nr. persoane" required>
+        <input type="number" name="guests" placeholder="Număr persoane" required>
 
         <select name="status" required>
           <option value="">Selectează</option>
@@ -47,7 +68,9 @@
         <button type="submit">Trimite</button>
       </form>
     </div>
+
   </div>
+
 </div>
 
 <script src="script.js"></script>
