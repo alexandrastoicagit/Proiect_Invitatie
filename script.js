@@ -4,7 +4,7 @@ function openInvite() {
   setTimeout(() => {
     document.querySelector('.overlay').style.display = "none";
     document.getElementById("content").classList.remove("hidden");
-  }, 1000);
+  }, 900);
 
   document.getElementById("music").play();
 }
