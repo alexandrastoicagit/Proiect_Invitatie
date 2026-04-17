@@ -1,11 +1,12 @@
-function openInvite() {
+document.addEventListener("DOMContentLoaded", function() {
+
+window.openInvite = function() {
   document.querySelector('.overlay').classList.add('open');
 
   setTimeout(() => {
     document.querySelector('.overlay').style.display = "none";
     document.getElementById("content").classList.remove("hidden");
   }, 900);
-
 }
 
 /* COUNTDOWN */
@@ -26,7 +27,7 @@ setInterval(() => {
   const seconds = Math.floor((diff / 1000) % 60);
 
   document.getElementById("countdown").innerText =
-    days + " zile  " + hours + " ore  "+ minutes + " minute  "+ seconds + " secunde";
+    days + " zile " + hours + " ore " + minutes + " minute " + seconds + " secunde";
 }, 1000);
 
 /* RSVP */
@@ -39,31 +40,32 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
-  method: "POST",
-  body: JSON.stringify(data)
-})
-.then(res => res.text())
-.then(text => {
-  try {
-    const res = JSON.parse(text);
+  fetch("https://script.google.com/macros/s/AKfycbwSQCQWfOYszvpn_qNAme_tIWMSt0Q029zfBLLdewGL4H73ItlTKrzUzEUbIBoGL9PDbw/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(text => {
+    try {
+      const res = JSON.parse(text);
 
-    if (res.result === "success") {
-      alert("Mulțumim pentru confirmare ❤️");
-      document.getElementById("rsvpForm").reset();
-    } 
-    else if (res.result === "duplicate") {
-      alert("Ai completat deja formularul 🙂");
-    } 
-    else {
-      alert("Eroare: " + (res.message || "necunoscută"));
+      if (res.result === "success") {
+        alert("Mulțumim ❤️");
+        this.reset();
+      } else if (res.result === "duplicate") {
+        alert("Deja ai completat 🙂");
+      } else {
+        alert("Eroare");
+      }
+
+    } catch (e) {
+      console.error(text);
+      alert("Eroare server");
     }
-  } catch (e) {
-    console.error("Răspuns invalid:", text);
-    alert("Eroare server");
-  }
-})
-.catch(err => {
-  console.error(err);
-  alert("Eroare de conexiune");
+  })
+  .catch(() => {
+    alert("Eroare de conexiune");
+  });
+});
+
 });
