@@ -40,11 +40,24 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzl18koiPdEHPGwLn5uzVX6_qh3dCKjbskr_1GHRCmSPdEiFdZAgV_mcpzcpmVyZSwTgg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwIDsOvCudwZmcg_MQjs5fR2jqcvSUDAkHBGirBIA5PXSzV6Ma4KFyG7AZ5E1D0Q7gaAQ/exec", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(data)
-  }).then(() => {
-    alert("Mulțumim pentru confirmare");
-    this.reset();
+  })
+  .then(res => res.json())
+  .then(res => {
+    if (res.result === "success") {
+      alert("Mulțumim pentru confirmare ❤️");
+      this.reset();
+    } else {
+      alert("Eroare: " + res.message);
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Eroare de conexiune");
   });
 });
