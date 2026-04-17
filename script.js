@@ -27,7 +27,7 @@ setInterval(() => {
   const seconds = Math.floor((diff / 1000) % 60);
 
   document.getElementById("countdown").innerText =
-    days + " zile • " + hours + " ore"+ minutes + " minute"+ seconds + " secunde";
+    days + " zile  " + hours + " ore  "+ minutes + " minute  "+ seconds + " secunde";
 }, 1000);
 
 /* RSVP */
@@ -40,7 +40,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
     status: this.status.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwOKVPLbT8wtJqNu900h1qD1WmvlUGQ6ptlPk6C8zA690vM5rEPxCzKSXYJOObVSfAyfQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzl18koiPdEHPGwLn5uzVX6_qh3dCKjbskr_1GHRCmSPdEiFdZAgV_mcpzcpmVyZSwTgg/exec", {
     method: "POST",
     body: JSON.stringify(data)
   }).then(() => {
