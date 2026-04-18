@@ -74,45 +74,24 @@
   // Data țintă (ex: 1 ianuarie 2027)
 
   const targetDate = new Date("Sep 11, 2027 16:00:00").getTime();
-
   const countdownFunction = setInterval(function() {
-
     const now = new Date().getTime();
-
     const distance = targetDate - now;
-
-    // Calcul timp
-
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Afișare
-
     document.getElementById("countdown").innerHTML =
-
       days + " zile " +
-
       hours + " ore " +
-
       minutes + " minute " +
-
       seconds + " secunde";
 
-    // Dacă timpul a expirat
-
     if (distance < 0) {
-
       clearInterval(countdownFunction);
-
       document.getElementById("countdown").innerHTML = "A expirat!";
-
     }
-
   }, 1000);
 
 </script>
