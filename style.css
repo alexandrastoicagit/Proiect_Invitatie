@@ -54,8 +54,8 @@ body {
 
 /* SIGILIU */
 .wax-seal {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   background: radial-gradient(circle at 30% 30%, #f5efe6, #d6c7a8);
   border-radius: 50%;
   position: absolute;
@@ -67,7 +67,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  font-family: 'Tangerine', cursive;
+  font-family: 'Gabriela', cursive;
   font-size: 38px;
   color: #8c7a5a;
 
