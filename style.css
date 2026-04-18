@@ -258,3 +258,7 @@ section {
 .timeline-item:hover {
   transform: scale(1.02);
 }
+
+.timeline-item .w-14 {
+  border: 6px solid white;
+}
