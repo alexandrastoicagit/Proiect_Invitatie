@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <video autoplay muted loop playsinline id="bg-video">
@@ -117,6 +118,61 @@
       <p>Locație: V Lounge</p>
       <a href="https://maps.app.goo.gl/5PUygjoMzNtHvifR6">Vezi pe hartă</a>
     </div>
+
+    <section class="py-24 relative">
+
+  <!-- titlu -->
+  <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-semibold"
+        style="font-family:'Playfair Display'; color:#c6b38e;">
+      Locații & Program
+    </h2>
+    <p class="text-gray-500 italic mt-2">Unde ne vedem — și când</p>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto">
+
+    <!-- linie centrala -->
+    <div class="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+
+    <!-- ITEM 1 -->
+    <div class="timeline-item grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 mb-16 opacity-0 translate-y-10 transition-all duration-700">
+
+      <div class="text-right pr-8">
+        <p class="italic text-gray-500">11 Septembrie 2027 · 16:00</p>
+        <h3 class="text-2xl font-semibold" style="color:#c6b38e;">Cununia religioasă</h3>
+        <p class="text-gray-600">Biserica Eroilor Martiri</p>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="w-14 h-14 rounded-full bg-[#c6b38e] text-white flex items-center justify-center shadow-lg">
+          ⛪
+        </div>
+      </div>
+
+      <div></div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="timeline-item grid md:grid-cols-[1fr_auto_1fr] items-center gap-8 mb-16 opacity-0 translate-y-10 transition-all duration-700">
+
+      <div></div>
+
+      <div class="flex justify-center">
+        <div class="w-14 h-14 rounded-full bg-[#c6b38e] text-white flex items-center justify-center shadow-lg">
+          🥂
+        </div>
+      </div>
+
+      <div class="text-left pl-8">
+        <p class="italic text-gray-500">11 Septembrie 2027 · 18:30</p>
+        <h3 class="text-2xl font-semibold" style="color:#c6b38e;">Petrecere</h3>
+        <p class="text-gray-600">V Lounge</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- RSVP -->
     <div class="section">

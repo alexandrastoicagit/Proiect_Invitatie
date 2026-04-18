@@ -30,6 +30,18 @@ setInterval(() => {
     days + " zile " + hours + " ore " + minutes + " minute " + seconds + " secunde";
 }, 1000);
 
+const items = document.querySelectorAll(".timeline-item");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("opacity-0", "translate-y-10");
+    }
+  });
+}, { threshold: 0.2 });
+
+items.forEach(item => observer.observe(item));
+
 /* RSVP */
 document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();

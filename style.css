@@ -250,3 +250,11 @@ body::after {
 .overlay {
   background: transparent !important;
 }
+
+section {
+  backdrop-filter: blur(8px);
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+}
