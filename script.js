@@ -33,17 +33,27 @@ setInterval(() => {
 const items = document.querySelectorAll(".timeline-item");
 const line = document.getElementById("timeline-line");
 
+let lineAnimated = false;
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
 
-      // stagger effect
+      // stagger
       setTimeout(() => {
         entry.target.classList.add("show");
+
+        // glow icon
+        const icon = entry.target.querySelector(".icon-wrapper");
+        icon.classList.add("glow");
+
       }, index * 300);
 
-      // animatie linie
-      line.style.transform = "scaleY(1)";
+      // linie progresiva (o singura data)
+      if (!lineAnimated) {
+        line.style.transform = "scaleY(1)";
+        lineAnimated = true;
+      }
     }
   });
 }, { threshold: 0.2 });
