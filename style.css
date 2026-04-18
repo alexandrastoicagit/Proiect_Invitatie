@@ -424,11 +424,6 @@ section {
     align-items: flex-start;
   }
 
-  /* ascunde coloane goale */
-  .timeline-item > div:first-child:empty,
-  .timeline-item > div:last-child:empty {
-    display: none;
-  }
 
   /* reset left/right */
   .left,
@@ -479,18 +474,23 @@ section {
 
   /* LINIE PE STÂNGA (UX corect mobile) */
   #timeline-line {
-    left: 23px !important;
-    transform: scaleY(0);
-  }
+  left: 50% !important;
+  transform: translateX(-50%) scaleY(0);
+}
 
   /* spacing între evenimente */
-  .timeline-item {
-    margin-bottom: 30px;
-  }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .timeline-item {
     padding-left: 4px;
   }
+}
+
+.icon-wrapper {
+  transform: translateZ(0);
 }
