@@ -110,6 +110,7 @@ body {
   font-size: 56px;
   background: linear-gradient(45deg, #c6b38e, #e8dcc6);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -305,3 +306,133 @@ body::after {
   .subtitle {
     font-size: 22px;
   }
+
+  .section {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* =========================
+   TIMELINE STRUCTURE FIX
+========================= */
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin: 60px 0;
+  position: relative;
+}
+
+/* CENTRU */
+.icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: #c6b38e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 6px solid white;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* LINIE CENTRALĂ */
+#timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #ddd;
+  z-index: 1;
+}
+
+/* CONTENT BOX */
+.content {
+  max-width: 320px;
+}
+
+.left {
+  justify-self: end;
+  text-align: right;
+  margin-right: 40px;
+}
+
+.right {
+  justify-self: start;
+  text-align: left;
+  margin-left: 40px;
+}
+
+/* TITLURI */
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #c6b38e;
+  font-family: 'Playfair Display', serif;
+}
+
+.location {
+  font-size: 16px;
+  color: #555;
+}
+
+.time {
+  font-style: italic;
+  color: #888;
+}
+
+/* =========================
+   ANIMAȚIE APARIȚIE
+========================= */
+
+.timeline-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  .timeline-item {
+    grid-template-columns: 50px 1fr;
+    gap: 14px;
+  }
+
+  #timeline-line {
+    left: 25px;
+    transform: none;
+  }
+
+  .left,
+  .right {
+    text-align: left;
+    justify-self: start;
+    margin: 0;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .location {
+    font-size: 14px;
+  }
+}
