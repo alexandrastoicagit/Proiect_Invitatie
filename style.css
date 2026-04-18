@@ -494,3 +494,75 @@ section {
 .icon-wrapper {
   transform: translateZ(0);
 }
+
+/* =========================
+   COUNTDOWN PREMIUM CIRCULAR
+========================= */
+
+.countdown {
+  text-align: center;
+  margin: 30px auto;
+  font-family: 'Playfair Display', serif;
+}
+
+.countdown h4 {
+  font-size: 18px;
+  color: #8c7a5a;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* container numere */
+.container_count {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+/* cercuri pentru numere */
+.container_count div {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f5efe6, #d6c7a8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #5f6f5a;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* text sub cerc */
+.container_count span {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 1px;
+}
+
+/* ultimul fără margine extra */
+.container_count.last {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .container_count div {
+    width: 55px;
+    height: 55px;
+    font-size: 18px;
+  }
+
+  .container_count {
+    margin: 0 6px;
+  }
+
+  .countdown h4 {
+    font-size: 16px;
+  }
+}

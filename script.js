@@ -10,25 +10,22 @@ window.openInvite = function() {
 }
 
 /* COUNTDOWN */
-const weddingDate = new Date("2027-09-11T16:00:00").getTime();
+const target = new Date(document.querySelector(".countdown").dataset.date).getTime();
 
-setInterval(() => {
+function updateCountdown() {
   const now = new Date().getTime();
-  const diff = weddingDate - now;
+  const diff = target - now;
 
-  if (diff <= 0) {
-    document.getElementById("countdown").innerText = "Ziua evenimentului";
-    return;
-  }
+  if (diff <= 0) return;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
+}
 
-  document.getElementById("countdown").innerText =
-    days + " zile " + hours + " ore " + minutes + " minute " + seconds + " secunde";
-}, 1000);
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
 const items = document.querySelectorAll(".timeline-item");
 const line = document.getElementById("timeline-line");
