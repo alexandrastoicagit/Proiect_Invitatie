@@ -162,10 +162,9 @@ body {
 .parents {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-
   max-width: 900px;
   margin: 40px auto;
+  gap: 60px;
   align-items: start;
 }
 
@@ -174,13 +173,13 @@ body {
 }
 
 .parent-block.left {
-  text-align: right;
-  padding-right: 30px;
+  text-align: left;
+  justify-self: start;
 }
 
 .parent-block.right {
-  text-align: left;
-  padding-left: 30px;
+  text-align: right;
+  justify-self: end;
 }
 
 /* FORM */
@@ -331,15 +330,6 @@ section {
   max-width: 320px;
 }
 
-.left {
-  text-align: right;
-  margin-right: 40px;
-}
-
-.right {
-  text-align: left;
-  margin-left: 40px;
-}
 
 /* text */
 .title {
@@ -584,7 +574,7 @@ section {
   .parent-block.left,
   .parent-block.right {
     text-align: center;
-    padding: 0;
+    justify-self: center;
   }
 }
 
