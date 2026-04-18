@@ -132,26 +132,26 @@ body {
 
 .parents {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   max-width: 900px;
   margin: 40px auto;
-  gap: 80px;
-  align-items: start;
+  gap: 0;
+  position: relative;
 }
 
-.parent-block {
-  max-width: 320px;
-  width: 100%;
-}
-
+/* bloc stânga (mireasa) */
 .parent-block.left {
-  justify-self: start;
-  text-align: left;
-}
-
-.parent-block.right {
   justify-self: end;
   text-align: right;
+  padding-right: 40px;
+}
+
+/* bloc dreapta (mirele) */
+.parent-block.right {
+  justify-self: start;
+  text-align: left;
+  padding-left: 40px;
 }
 
 /* =========================
@@ -228,11 +228,56 @@ body::after {
    COUNTDOWN
 ========================= */
 
-#countdown {
+.countdown {
+  text-align: center;
+  margin: 30px auto;
+  font-family: 'Playfair Display', serif;
+}
+
+.countdown h4 {
+  font-size: 18px;
+  color: #8c7a5a;
+  margin-bottom: 20px;
+}
+
+/* container fiecare unitate */
+.container_count {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
+
+/* CERC (DOAR CONTUR, FARA FILL) */
+.container_count div {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1.8px solid #c6b38e;
+  background: transparent;
+
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #5f6f5a;
+}
+
+/* label */
+.container_count span {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .container_count div {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
 }
 
 /* =========================
@@ -240,18 +285,18 @@ body::after {
 ========================= */
 
 @media (max-width: 768px) {
-
   .parents {
     grid-template-columns: 1fr;
-    gap: 25px;
     text-align: center;
   }
 
   .parent-block.left,
   .parent-block.right {
-    text-align: center;
     justify-self: center;
+    text-align: center;
+    padding: 0;
   }
+}
 
   .names {
     font-size: 42px;
@@ -260,4 +305,3 @@ body::after {
   .subtitle {
     font-size: 22px;
   }
-}
