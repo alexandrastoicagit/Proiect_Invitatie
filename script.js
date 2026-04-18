@@ -31,11 +31,19 @@ setInterval(() => {
 }, 1000);
 
 const items = document.querySelectorAll(".timeline-item");
+const line = document.getElementById("timeline-line");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      entry.target.classList.remove("opacity-0", "translate-y-10");
+
+      // stagger effect
+      setTimeout(() => {
+        entry.target.classList.add("show");
+      }, index * 300);
+
+      // animatie linie
+      line.style.transform = "scaleY(1)";
     }
   });
 }, { threshold: 0.2 });
