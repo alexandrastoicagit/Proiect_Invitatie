@@ -133,6 +133,8 @@ html {
   font-family: 'Playfair', serif;
   color: #3e3e3e;
   background: transparent !important;
+  display: flex;
+  justify-content: flex-start; /* Aliniem textul sus */
 }
 
 .video-sticky {
@@ -142,6 +144,7 @@ html {
   width: 100%;
   height: 100%;
   z-index: -1; /* Stă în spatele textului */
+  pointer-events: none; /* Ne asigurăm că nu blochează click-urile pe text */
 }
 
 .video-sticky::after {
