@@ -114,11 +114,17 @@ html, body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: auto;
+}
+
 .veil {
   position: relative;
   min-height: auto;
   overflow: hidden;
   text-align: center;
+  padding-top: 0;
+  margin-top: 0;
   font-family: 'Playfair', serif;
   color: #3e3e3e;
   background: transparent !important;
