@@ -1,63 +1,81 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-window.openInvite = function() {
-  document.querySelector('.overlay').classList.add('open');
+  // Funcția de deschidere a invitației
+  window.openInvite = function() {
+    const overlay = document.querySelector('.overlay');
+    const content = document.getElementById('content');
+    const bgVideo = document.getElementById('bg-video');
 
-  setTimeout(() => {
-    document.querySelector('.overlay').style.display = "none";
-    document.getElementById("content").classList.remove("hidden");
-  }, 900);
-}
+    // 1. Adăugăm clasa 'open' pentru a porni animația CSS a plicului
+    overlay.classList.add('open');
 
-/* COUNTDOWN */
-const target = new Date(document.querySelector(".countdown").dataset.date).getTime();
+    // 2. După ce se termină animația plicului (900ms conform CSS-ului tău), facem tranziția
+    setTimeout(() => {
+      // Ascundem overlay-ul cu un efect de fade out
+      overlay.style.transition = "opacity 0.6s ease";
+      overlay.style.opacity = "0";
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const diff = target - now;
-
-  if (diff <= 0) return;
-
-  document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
-  document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-const items = document.querySelectorAll(".timeline-item");
-const line = document.getElementById("timeline-line");
-
-let lineAnimated = false;
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-
-      // stagger
       setTimeout(() => {
-        entry.target.classList.add("show");
+        overlay.style.display = "none";
+        
+        // Afișăm conținutul invitației
+        content.classList.remove("hidden");
+        
+        // Pornim videoclipul (browserele blochează autoplay-ul uneori, asta îl forțează să pornească la interacțiune)
+        if (bgVideo) {
+          bgVideo.play();
+        }
+      }, 600);
+    }, 900);
+  }
 
-        // glow icon
-        const icon = entry.target.querySelector(".icon-wrapper");
-        icon.classList.add("glow");
+  /* --- Restul codului tău rămâne neschimbat --- */
+  
+  /* COUNTDOWN */
+  const countdownElement = document.querySelector(".countdown");
+  if (countdownElement) {
+    const target = new Date(countdownElement.dataset.date).getTime();
 
-      }, index * 300);
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = target - now;
 
-      // linie progresiva (o singura data)
-      if (!lineAnimated) {
-        line.style.transform = "scaleY(1)";
-        lineAnimated = true;
-      }
+      if (diff <= 0) return;
+
+      document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").innerText = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("seconds").innerText = Math.floor((diff / 1000) % 60);
     }
-  });
-}, { threshold: 0.2 });
 
-items.forEach(item => observer.observe(item));
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  }
 
-/* RSVP */
+  /* TIMELINE OBSERVER */
+  const items = document.querySelectorAll(".timeline-item");
+  const line = document.getElementById("timeline-line");
+  let lineAnimated = false;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+          const icon = entry.target.querySelector(".icon-wrapper");
+          if (icon) icon.classList.add("glow");
+        }, index * 300);
+
+        if (!lineAnimated && line) {
+          line.style.transform = "scaleY(1)";
+          lineAnimated = true;
+        }
+      }
+    });
+  }, { threshold: 0.2 });
+
+  items.forEach(item => observer.observe(item));
+
 /* RSVP */
 document.getElementById("rsvp-form").addEventListener("submit", function(e) {
   e.preventDefault();
