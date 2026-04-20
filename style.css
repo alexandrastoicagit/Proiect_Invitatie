@@ -130,14 +130,6 @@ html {
   background: transparent !important;
 }
 
-section,
-div,
-.veil,
-#content,
-#content-inner {
-  background: transparent !important;
-}
-
 .video-sticky {
   position: sticky;
   top: 0;
