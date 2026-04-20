@@ -95,9 +95,7 @@ body {
   transform: scale(1.4);
 }
 
-/* =========================
    CONȚINUT INVITAȚIE
-========================= */
 
 .hidden {
   opacity: 0;
@@ -126,7 +124,6 @@ html {
 .veil {
   position: relative;
   min-height: auto;
-  overflow: hidden;
   text-align: center;
   padding-top: 0;
   margin-top: 0;
