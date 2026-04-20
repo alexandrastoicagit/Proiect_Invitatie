@@ -113,15 +113,16 @@ html, body {
   background: transparent !important;
 }
 
-.bg-video {
-  position: fixed; /* Îl blochează pe ecran */
+.video-section {
+  height: 200vh; /* important: dă spațiu scroll */
+  position: relative;
+}
+
+.video-sticky {
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100vw;
   height: 100vh;
-  z-index: -1; /* Îl pune în spatele textului */
-  overflow: hidden;
-  pointer-events: none; /* Permite click-uri prin el către butoane */
+  width: 100%;
 }
 
 #bg-video {
