@@ -323,7 +323,6 @@ button {
   border-radius: 6px;
 }
 
-
 #countdown {
   display: flex;
   justify-content: center;
@@ -428,7 +427,6 @@ button {
   max-width: 320px;
 }
 
-
 /* text */
 .title {
   font-family: 'Playfair Display', serif;
@@ -521,7 +519,6 @@ section {
     gap: 14px;
     align-items: flex-start;
   }
-
 
   /* reset left/right */
   .left,
@@ -859,5 +856,5 @@ section {
 .content.left {
   text-align: right;
   justify-self: start;
-  margin-left: 20px; /* distanta fata de linie */
+  margin-left: 6px; /* distanta fata de linie */
 }
