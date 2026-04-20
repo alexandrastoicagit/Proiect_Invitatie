@@ -856,8 +856,8 @@ section {
   letter-spacing: 2px;
 }
 
-.timeline-item:nth-child(1) .content,
-.timeline-item:nth-child(3) .content {
-  grid-column: 3;
-  text-align: left;
+.content.left {
+  text-align: right;
+  justify-self: start;
+  margin-left: 20px; /* distanta fata de linie */
 }
