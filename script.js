@@ -90,3 +90,55 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
 });
 
 });
+
+const partnerField = document.getElementById("partner-field");
+const menuField = document.getElementById("menu-field");
+const menuOptions = document.getElementById("menu-options");
+
+// ascuns inițial
+partnerField.style.display = "none";
+menuField.style.display = "none";
+
+// HTML pentru meniuri
+const menuForTwo = `
+  <label><input type="radio" name="meniu" value="2x Normal"> 2x Meniu Normal</label>
+  <label><input type="radio" name="meniu" value="2x Vegetarian"> 2x Meniu Vegetarian</label>
+  <label><input type="radio" name="meniu" value="1x Normal + 1x Vegetarian"> 1x Normal, 1x Vegetarian</label>
+`;
+
+const menuForOne = `
+  <label><input type="radio" name="meniu" value="Meniu Normal"> Meniu Normal</label>
+  <label><input type="radio" name="meniu" value="Meniu Vegetarian"> Meniu Vegetarian</label>
+`;
+
+// când se schimbă partener
+document.querySelectorAll("input[name='partener']").forEach(el => {
+  el.addEventListener("change", () => {
+
+    menuField.style.display = "block";
+
+    if (el.value === "Da") {
+      partnerField.style.display = "block";
+      menuOptions.innerHTML = menuForTwo;
+    } else {
+      partnerField.style.display = "none";
+      menuOptions.innerHTML = menuForOne;
+    }
+  });
+});
+
+const partnerField = document.getElementById("partner-field");
+
+// ascuns inițial
+partnerField.style.display = "none";
+
+// ascultă schimbarea
+document.querySelectorAll("input[name='partener']").forEach(input => {
+  input.addEventListener("change", function () {
+    if (this.value === "Da") {
+      partnerField.style.display = "block";
+    } else {
+      partnerField.style.display = "none";
+    }
+  });
+});
