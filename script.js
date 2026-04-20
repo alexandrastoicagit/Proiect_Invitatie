@@ -84,15 +84,15 @@ window.openInvite = function() {
 document.getElementById("rsvp-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
-const data = {
-  name: this.nume.value,
-  status: document.querySelector('input[name="participa"]:checked')?.value || "",
-  partner: document.querySelector('input[name="partener"]:checked')?.value || "",
-  partner_name: this.nume_partener.value || "",
-  kids: document.querySelector('input[name="copii"]:checked')?.value || "",
-  menu: document.querySelector('input[name="meniu"]:checked')?.value || "",
-  message: this.mesaj.value || ""
-};
+  const data = {
+    name: this.nume.value,
+    status: document.querySelector('input[name="participa"]:checked')?.value || "",
+    partner: document.querySelector('input[name="partener"]:checked')?.value || "",
+    partner_name: this.nume_partener.value || "",
+    kids: document.querySelector('input[name="copii"]:checked')?.value || "",
+    menu: document.querySelector('input[name="meniu"]:checked')?.value || "",
+    message: this.mesaj.value || ""
+  };
 
   fetch("https://script.google.com/macros/s/AKfycbx0IPczidZ6cUQpWD1X3-H8Oqz3f2Ld1Z_TTvK7UmLZmEx8ETVhcl1bYRym_G-4KEGO0Q/exec", {
     method: "POST",
@@ -147,9 +147,7 @@ document.querySelectorAll("input[name='partener']").forEach(el => {
   });
 });
 
-radios.forEach(r => {
-  r.addEventListener("change", toggleRSVPFields);
-});
+const radios = document.querySelectorAll('input[name="participa"]');
 const partnerChoice = document.getElementById("partner-choice");
 const kidsField = document.getElementById("kids-field");
 
