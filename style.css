@@ -594,7 +594,7 @@ section {
 
 .rsvp-container {
   max-width: 520px;
-  margin: 30px auto;
+  margin: 60px auto;
   padding: 30px 25px;
   background: rgba(255,255,255,0.65);
   backdrop-filter: blur(10px);
@@ -607,13 +607,15 @@ section {
   font-size: 32px;
   color: #c6b38e;
   margin-bottom: 25px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair', serif;
 }
 
 /* grup */
 .rsvp-group {
   margin-bottom: 28px;
   text-align: center;
+  font-family: 'Playfair', serif;
+  color: #444;
 }
 
 .rsvp-group label {
@@ -675,6 +677,8 @@ section {
 .rsvp-radio-group {
   text-align: left;
   margin-top: 10px;
+  font-family: 'Playfair', serif;
+  color: #444;
 }
 
 .rsvp-radio-group label {
@@ -697,6 +701,7 @@ section {
   width: 100%;
   padding: 14px;
   background: #c6b38e;
+  font-family: 'Playfair', serif;
   color: white;
   border: none;
   border-radius: 6px;
