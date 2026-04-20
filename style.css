@@ -9,7 +9,7 @@ body {
 ========================= */
 
 .overlay {
-  position: fixed; /* Schimbat din relative/static în fixed */
+  position: fixed; /* Îl scoatem din fluxul paginii */
   top: 0;
   left: 0;
   height: 100vh;
@@ -18,8 +18,8 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: transparent !important;
-  z-index: 10; /* Asigură-te că e deasupra conținutului */
+  background: white; /* Sau culoarea ta de fundal */
+  z-index: 9999; /* Îl punem deasupra tuturor */
 }
 
 /* plic full screen */
@@ -195,7 +195,8 @@ section {
 #content {
   position: relative;
   /* Eliminăm orice ar putea împinge conținutul jos */
-  margin: 0; 
+  margin-top: 0;
+  width: 100%; 
   padding: 0;
   z-index: 1;
   background: transparent !important;

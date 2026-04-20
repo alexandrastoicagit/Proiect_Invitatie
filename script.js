@@ -18,11 +18,12 @@ window.openInvite = function() {
         // Afișăm conținutul
         content.classList.remove("hidden");
         
-        // Resetăm scroll-ul forțat la 0
+        // --- ACESTA ESTE FIX-UL CRITIC ---
         window.scrollTo(0, 0);
+        document.body.scrollTop = 0; 
         document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-        
+        // ---------------------------------
+
         if (bgVideo) {
           bgVideo.play();
         }
