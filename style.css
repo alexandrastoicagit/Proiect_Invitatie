@@ -795,7 +795,7 @@ section {
 /* pills */
 .rsvp-options {
   display: inline-flex;
-  background: #f1f1f1;
+  background: #f2eee7;
   border-radius: 30px;
   padding: 4px;
   gap: 5px;
@@ -838,7 +838,7 @@ section {
 .rsvp-textarea {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f2eee7;
   padding: 10px;
   resize: none;
 }
@@ -849,7 +849,7 @@ section {
   padding: 14px;
   background: #c6b38e;
   font-family: 'Playfair', serif;
-  color: white;
+  color: #f2eee7;
   border: none;
   border-radius: 6px;
   margin-top: 25px;
