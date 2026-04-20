@@ -155,16 +155,32 @@ const kidsField = document.getElementById("kids-field");
 function toggleRSVPFields() {
   const value = document.querySelector('input[name="participa"]:checked')?.value;
 
+  if (!partnerChoice) return;
+
   if (value === "Nu Particip") {
-    partnerChoice.style.display = "none";
-    partnerField.style.display = "none";
-    kidsField.style.display = "none";
-    menuField.style.display = "none";
+
+    [partnerChoice, partnerField, kidsField, menuField].forEach(el => {
+      el.style.display = "none";
+
+      // 🔥 scoate required din toate inputurile din interior
+      el.querySelectorAll("input, select, textarea").forEach(input => {
+        input.removeAttribute("required");
+      });
+    });
+
   } else {
-    partnerChoice.style.display = "block";
-    partnerField.style.display = "block";
-    kidsField.style.display = "block";
-    menuField.style.display = "block";
+
+    [partnerChoice, partnerField, kidsField, menuField].forEach(el => {
+      el.style.display = "block";
+
+      // 🔥 pune required înapoi (doar unde ai nevoie)
+      el.querySelectorAll("input, select, textarea").forEach(input => {
+        if (input.name !== "nume_partener") { 
+          input.setAttribute("required", "true");
+        }
+      });
+    });
+
   }
 }
 
