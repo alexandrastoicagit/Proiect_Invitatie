@@ -145,7 +145,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* 🔥 mai premium */
+  background: rgba(0, 0, 0, 0.70); /* 🔥 mai premium */
   z-index: 1;
 }
 
@@ -752,7 +752,7 @@ section {
 .rsvp-title {
   text-align: center;
   font-size: 32px;
-  color: #c6b38e;
+  color: #a99368;
   margin-bottom: 25px;
   font-family: 'Playfair', serif;
 }
