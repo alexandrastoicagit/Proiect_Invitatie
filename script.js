@@ -19,9 +19,9 @@ window.openInvite = function() {
         content.classList.remove("hidden");
         
         // --- ACESTA ESTE FIX-UL CRITIC ---
-        const videoSticky = document.querySelector('.video-sticky');
-        videoSticky.style.position = "fixed";
-        window.scrollTo({ top: 0, behavior: 'instant' });
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0;
         // ---------------------------------
 
         if (bgVideo) {
