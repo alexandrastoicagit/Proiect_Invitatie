@@ -90,7 +90,7 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
     partner: this.partener.value || "",
     partner_name: this.nume_partener.value || "",
     kids: this.copii.value || "",
-    menu: this.menu-options.value || "",
+    menu: this.meniu.value || "",
     message: this.mesaj.value || ""
   };
 
@@ -121,14 +121,14 @@ menuField.style.display = "none";
 
 // HTML pentru meniuri
 const menuForTwo = `
-  <label><input type="radio" name="menu-options" value="2x Normal"> 2x Meniu Normal</label>
-  <label><input type="radio" name="menu-options" value="2x Vegetarian"> 2x Meniu Vegetarian</label>
-  <label><input type="radio" name="menu-options" value="1x Normal + 1x Vegetarian"> 1x Normal, 1x Vegetarian</label>
+  <label><input type="radio" name="meniu" value="2x Normal"> 2x Meniu Normal</label>
+  <label><input type="radio" name="meniu" value="2x Vegetarian"> 2x Meniu Vegetarian</label>
+  <label><input type="radio" name="meniu" value="1x Normal + 1x Vegetarian"> 1x Normal, 1x Vegetarian</label>
 `;
 
 const menuForOne = `
-  <label><input type="radio" name="menu-options" value="Meniu Normal"> Meniu Normal</label>
-  <label><input type="radio" name="menu-options" value="Meniu Vegetarian"> Meniu Vegetarian</label>
+  <label><input type="radio" name="meniu" value="Meniu Normal"> Meniu Normal</label>
+  <label><input type="radio" name="meniu" value="Meniu Vegetarian"> Meniu Vegetarian</label>
 `;
 
 // când se schimbă partener
