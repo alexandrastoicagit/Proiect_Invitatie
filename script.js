@@ -58,22 +58,34 @@ const observer = new IntersectionObserver((entries) => {
 items.forEach(item => observer.observe(item));
 
 /* RSVP */
-document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+/* RSVP */
+document.getElementById("rsvp-form").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const data = {
-    name: this.name.value,
-    guests: this.guests.value,
-    status: this.status.value
+    name: this.nume.value,
+    status: this.participa.value,
+    partner: this.partener.value || "",
+    partner_name: this.nume_partener.value || "",
+    kids: this.copii.value || "",
+    menu: this.meniu.value || "",
+    message: this.mesaj.value || ""
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbxPGnoSXMjMxbVJdr32CLXlEfhsMDj8sXpPvkDY1YcsYvU2-rFA7EfLeD2snCIfwPwqTQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx0IPczidZ6cUQpWD1X3-H8Oqz3f2Ld1Z_TTvK7UmLZmEx8ETVhcl1bYRym_G-4KEGO0Q/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })
   .then(() => {
     alert("Mulțumim pentru confirmare! 💌");
     this.reset();
+
+    // reset UI
+    document.getElementById("partner-field").style.display = "none";
+    document.getElementById("menu-field").style.display = "none";
+  })
+  .catch(() => {
+    alert("Eroare la trimitere.");
   });
 });
 

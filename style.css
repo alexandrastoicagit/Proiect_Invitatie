@@ -587,3 +587,119 @@ section {
   transform: scale(1.05);
   border-color: #8c7a5a;
 }
+
+/* =========================
+   RSVP PREMIUM
+========================= */
+
+.rsvp-container {
+  max-width: 520px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+}
+
+/* titlu */
+.rsvp-title {
+  text-align: center;
+  font-size: 32px;
+  color: #7a8c85;
+  margin-bottom: 25px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* grup */
+.rsvp-group {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.rsvp-group label {
+  font-weight: 600;
+  color: #444;
+}
+
+.rsvp-group small {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* input */
+.rsvp-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  background: transparent;
+}
+
+.rsvp-input:focus {
+  outline: none;
+  border-bottom: 1px solid #c6b38e;
+}
+
+/* pills */
+.rsvp-options {
+  display: inline-flex;
+  background: #f1f1f1;
+  border-radius: 30px;
+  padding: 4px;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.rsvp-options input {
+  display: none;
+}
+
+.rsvp-options label {
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #777;
+}
+
+.rsvp-options input:checked + label {
+  background: white;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* radio menu */
+.rsvp-radio-group {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.rsvp-radio-group label {
+  display: flex;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+/* textarea */
+.rsvp-textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  resize: none;
+}
+
+/* button */
+.rsvp-submit {
+  width: 100%;
+  padding: 14px;
+  background: #7f9c97;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 25px;
+  letter-spacing: 2px;
+}

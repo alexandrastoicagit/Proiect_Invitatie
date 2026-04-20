@@ -182,23 +182,89 @@
   </div>
 </section>
 
+
+
     <!-- RSVP -->
-    <div class="section">
-      <h3>Confirmare prezență</h3>
+  <form id="rsvp-form" method="POST" action="https://script.google.com/macros/s/AKfycbx0IPczidZ6cUQpWD1X3-H8Oqz3f2Ld1Z_TTvK7UmLZmEx8ETVhcl1bYRym_G-4KEGO0Q/exec">
+">
 
-      <form id="rsvpForm">
-        <input type="text" name="name" placeholder="Nume Prenume" required>
-        <input type="number" name="guests" placeholder="Număr persoane" required>
+  <div class="rsvp-container">
 
-        <select name="status" required>
-          <option value="">Selectează</option>
-          <option value="Confirm">Confirm</option>
-          <option value="Nu pot veni">Nu pot veni</option>
-        </select>
+    <div class="rsvp-title">Confirmare</div>
 
-        <button type="submit">Trimite</button>
-      </form>
+    <!-- NUME -->
+    <div class="rsvp-group">
+      <label>Nume și Prenume *</label>
+      <small>Numele și prenumele dumneavoastră.</small>
+      <input class="rsvp-input" type="text" name="nume" required>
     </div>
+
+    <!-- PARTICIPARE -->
+    <div class="rsvp-group">
+      <label>Răspuns *</label>
+
+      <div class="rsvp-options">
+        <input type="radio" id="yes" name="participa" value="Particip" required>
+        <label for="yes">Particip</label>
+
+        <input type="radio" id="no" name="participa" value="Nu Particip">
+        <label for="no">Nu Particip</label>
+      </div>
+    </div>
+
+    <!-- PARTENER -->
+    <div class="rsvp-group">
+      <label>Veți fi însoțit?</label>
+
+      <div class="rsvp-options">
+        <input type="radio" id="p1" name="partener" value="Da">
+        <label for="p1">Da</label>
+
+        <input type="radio" id="p2" name="partener" value="Nu">
+        <label for="p2">Nu</label>
+      </div>
+    </div>
+
+    <!-- NUME PARTENER -->
+    <div class="rsvp-group" id="partner-field">
+      <label>Nume și Prenume partener</label>
+      <input class="rsvp-input" type="text" name="nume_partener">
+    </div>
+
+    <!-- COPII -->
+    <div class="rsvp-group">
+      <label>Veți veni cu copii?</label>
+
+      <div class="rsvp-options">
+        <input type="radio" id="c1" name="copii" value="Da">
+        <label for="c1">Da</label>
+
+        <input type="radio" id="c2" name="copii" value="Nu">
+        <label for="c2">Nu</label>
+      </div>
+    </div>
+
+    <!-- MENIU -->
+    <div class="rsvp-group" id="menu-field">
+      <label>Preferințe meniu</label>
+
+      <div class="rsvp-radio-group">
+        <label><input type="radio" name="meniu" value="2x Normal"> 2x Meniu Normal</label>
+        <label><input type="radio" name="meniu" value="2x Vegetarian"> 2x Meniu Vegetarian</label>
+        <label><input type="radio" name="meniu" value="Mix"> 1x Normal, 1x Vegetarian</label>
+      </div>
+    </div>
+
+    <!-- MESAJ -->
+    <div class="rsvp-group">
+      <label>Mesaj</label>
+      <textarea class="rsvp-textarea" name="mesaj"></textarea>
+    </div>
+
+    <button class="rsvp-submit" type="submit">TRIMITE</button>
+
+  </div>
+</form>
 
   </div>
 </div>
