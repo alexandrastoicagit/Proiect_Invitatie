@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // Afișăm conținutul invitației
         content.classList.remove("hidden");
         
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'instant'
+        });
         // Pornim videoclipul (browserele blochează autoplay-ul uneori, asta îl forțează să pornească la interacțiune)
         if (bgVideo) {
           bgVideo.play();
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.getElementById('content').classList.add('show');
-  
+
   /* --- Restul codului tău rămâne neschimbat --- */
   
   /* COUNTDOWN */
