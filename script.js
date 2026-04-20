@@ -125,20 +125,4 @@ document.querySelectorAll("input[name='partener']").forEach(el => {
   });
 });
 
-const partnerField = document.getElementById("partner-field");
-
-// ascuns inițial
-partnerField.style.display = "none";
-
-// ascultă schimbarea
-document.querySelectorAll("input[name='partener']").forEach(input => {
-  input.addEventListener("change", function () {
-    if (this.value === "Da") {
-      partnerField.style.display = "block";
-    } else {
-      partnerField.style.display = "none";
-    }
-  });
-});
-
 });
