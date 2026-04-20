@@ -133,7 +133,7 @@ html {
 }
 
 .video-sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -858,6 +858,12 @@ section {
 
 .content.left {
   text-align: right;
+  justify-self: end;   /* 🔥 mută conținutul spre linia centrală */
+  margin-right: 10px;  /* spațiu mic față de linie */
+}
+
+.content.right {
+  text-align: left;
   justify-self: start;
-  margin-left: 6px; /* distanta fata de linie */
+  margin-left: 10px;
 }
