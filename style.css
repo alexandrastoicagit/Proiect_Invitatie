@@ -594,7 +594,7 @@ section {
 
 .rsvp-container {
   max-width: 520px;
-  margin: 60px auto;
+  margin: 30px auto;
   padding: 30px 25px;
   background: rgba(255,255,255,0.65);
   backdrop-filter: blur(10px);
@@ -605,7 +605,7 @@ section {
 .rsvp-title {
   text-align: center;
   font-size: 32px;
-  color: #7a8c85;
+  color: #c6b38e;
   margin-bottom: 25px;
   font-family: 'Playfair Display', serif;
 }
@@ -696,7 +696,7 @@ section {
 .rsvp-submit {
   width: 100%;
   padding: 14px;
-  background: #7f9c97;
+  background: #c6b38e;
   color: white;
   border: none;
   border-radius: 6px;
