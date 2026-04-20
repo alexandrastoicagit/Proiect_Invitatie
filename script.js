@@ -148,7 +148,6 @@ document.querySelectorAll("input[name='partener']").forEach(el => {
 });
 
 const radios = document.querySelectorAll('input[name="participa"]');
-const menuField = document.getElementById("menu-field");
 const partnerChoice = document.getElementById("partner-choice");
 const kidsField = document.getElementById("kids-field");
 
