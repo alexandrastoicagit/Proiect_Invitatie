@@ -136,11 +136,12 @@ html {
 }
 
 .video-sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
-  height: 100vh;
+  left: 0;
   width: 100%;
-  z-index: -1;
+  height: 100%;
+  z-index: -1; /* Stă în spatele textului */
 }
 
 .video-sticky::after {
