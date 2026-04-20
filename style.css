@@ -127,7 +127,7 @@ html {
   padding-top: 0;
   margin-top: 0;
   font-family: 'Playfair', serif;
-  color: #3e3e3e;
+  color: #f2eee7;
   background: transparent !important;
 }
 
@@ -218,7 +218,7 @@ section {
   font-family: 'Playfair', serif;
   max-width: 500px;
   margin: 20px auto;
-  color: #444;
+  color: #f2eee7;
 }
 
 /* DATE */
@@ -866,4 +866,14 @@ section {
   text-align: left;
   justify-self: start;
   margin-left: 10px;
+}
+
+.time {
+  color: #a89f8d;
+  opacity: 0.9;
+}
+
+.location {
+  color: #a89f8d;
+  opacity: 0.85;
 }
