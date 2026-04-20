@@ -103,10 +103,11 @@ body {
   text-align: center;
   font-family: 'Playfair', serif;
   color: #3e3e3e;
+  background: transparent;
 }
 
 .bg-video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -117,10 +118,10 @@ body {
 
 .veil::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.4);
-  z-index: 0;
+  background: rgba(255,255,255,0.35);
+  z-index: -1;
 }
 
 .content {
