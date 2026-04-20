@@ -147,4 +147,34 @@ document.querySelectorAll("input[name='partener']").forEach(el => {
   });
 });
 
+const radios = document.querySelectorAll('input[name="participa"]');
+
+const partnerChoice = document.getElementById("partner-choice");
+const partnerField = document.getElementById("partner-field");
+const kidsField = document.getElementById("kids-field");
+const menuField = document.getElementById("menu-field");
+
+function toggleRSVPFields() {
+  const value = document.querySelector('input[name="participa"]:checked')?.value;
+
+  if (value === "Nu Particip") {
+    partnerChoice.style.display = "none";
+    partnerField.style.display = "none";
+    kidsField.style.display = "none";
+    menuField.style.display = "none";
+  } else {
+    partnerChoice.style.display = "block";
+    partnerField.style.display = "block";
+    kidsField.style.display = "block";
+    menuField.style.display = "block";
+  }
+}
+
+radios.forEach(r => {
+  r.addEventListener("change", toggleRSVPFields);
+});
+
+// inițial
+toggleRSVPFields();
+
 });
