@@ -9,12 +9,17 @@ body {
 ========================= */
 
 .overlay {
+  position: fixed; /* Schimbat din relative/static în fixed */
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: transparent !important;
+  z-index: 10; /* Asigură-te că e deasupra conținutului */
 }
 
 /* plic full screen */
@@ -189,7 +194,9 @@ section {
 
 #content {
   position: relative;
-  top: 0;
+  /* Eliminăm orice ar putea împinge conținutul jos */
+  margin: 0; 
+  padding: 0;
   z-index: 1;
   background: transparent !important;
 }
@@ -349,10 +356,6 @@ button {
 .time-box small {
   font-size: 12px;
   color: #777;
-}
-
-.overlay {
-  background: transparent !important;
 }
 
 

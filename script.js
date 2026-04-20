@@ -1,38 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   // Funcția de deschidere a invitației
-  window.openInvite = function() {
+window.openInvite = function() {
     const overlay = document.querySelector('.overlay');
     const content = document.getElementById('content');
     const bgVideo = document.getElementById('bg-video');
 
-    // 1. Adăugăm clasa 'open' pentru a porni animația CSS a plicului
     overlay.classList.add('open');
 
-    // 2. După ce se termină animația plicului (900ms conform CSS-ului tău), facem tranziția
     setTimeout(() => {
-      // Ascundem overlay-ul cu un efect de fade out
       overlay.style.transition = "opacity 0.6s ease";
       overlay.style.opacity = "0";
 
       setTimeout(() => {
         overlay.style.display = "none";
         
-        // Afișăm conținutul invitației
+        // Afișăm conținutul
         content.classList.remove("hidden");
         
-        content.scrollIntoView({ behavior: 'instant', block: 'start' });
-        
-        // O a doua metodă de siguranță pentru mobil (Safari/Chrome)
+        // Resetăm scroll-ul forțat la 0
+        window.scrollTo(0, 0);
         document.documentElement.scrollTop = 0;
         document.body.scrollTop = 0;
-        // Pornim videoclipul (browserele blochează autoplay-ul uneori, asta îl forțează să pornească la interacțiune)
+        
         if (bgVideo) {
           bgVideo.play();
         }
       }, 600);
     }, 900);
-  }
+}
 
   document.getElementById('content').classList.add('show');
 
