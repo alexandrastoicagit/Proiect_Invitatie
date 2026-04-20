@@ -150,9 +150,7 @@ document.querySelectorAll("input[name='partener']").forEach(el => {
 const radios = document.querySelectorAll('input[name="participa"]');
 
 const partnerChoice = document.getElementById("partner-choice");
-const partnerField = document.getElementById("partner-field");
 const kidsField = document.getElementById("kids-field");
-const menuField = document.getElementById("menu-field");
 
 function toggleRSVPFields() {
   const value = document.querySelector('input[name="participa"]:checked')?.value;
