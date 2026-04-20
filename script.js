@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // Afișăm conținutul invitației
         content.classList.remove("hidden");
         
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: 'instant'
-        });
+        content.scrollIntoView({ behavior: 'instant', block: 'start' });
+        
+        // O a doua metodă de siguranță pentru mobil (Safari/Chrome)
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
         // Pornim videoclipul (browserele blochează autoplay-ul uneori, asta îl forțează să pornească la interacțiune)
         if (bgVideo) {
           bgVideo.play();
