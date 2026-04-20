@@ -126,11 +126,10 @@ html, body {
   filter: brightness(0.55) contrast(1.1) saturate(1.1);
 }
 
-.veil::before {
-  content: "";
+#overlay-bg {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0,0,0,0.35);
   z-index: -1;
   pointer-events: none;
 }
@@ -265,14 +264,6 @@ button {
   border-radius: 6px;
 }
 
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.7);
-  z-index: -5;
-}
 
 #countdown {
   display: flex;
