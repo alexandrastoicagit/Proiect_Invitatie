@@ -89,8 +89,6 @@ document.getElementById("rsvp-form").addEventListener("submit", function(e) {
   });
 });
 
-});
-
 const partnerField = document.getElementById("partner-field");
 const menuField = document.getElementById("menu-field");
 const menuOptions = document.getElementById("menu-options");
@@ -141,4 +139,6 @@ document.querySelectorAll("input[name='partener']").forEach(input => {
       partnerField.style.display = "none";
     }
   });
+});
+
 });
