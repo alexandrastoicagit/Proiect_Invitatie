@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 900);
   }
 
+  document.getElementById('content').classList.add('show');
+  
   /* --- Restul codului tău rămâne neschimbat --- */
   
   /* COUNTDOWN */
