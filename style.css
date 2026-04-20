@@ -113,14 +113,20 @@ html, body {
   background: transparent;
 }
 
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Îl trimite în spatele textului */
+    overflow: hidden;
+}
+
 #bg-video {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -2;
-  pointer-events: none;
-  filter: brightness(0.55) contrast(1.1) saturate(1.1);
 }
 
 body::before {
@@ -130,6 +136,16 @@ body::before {
   background: rgba(0,0,0,0.35);
   z-index: -5;
   pointer-events: none;
+}
+
+section {
+    min-height: 100vh;
+    background: transparent; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #app {
