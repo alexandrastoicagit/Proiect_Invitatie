@@ -133,19 +133,20 @@ html {
 }
 
 .video-sticky {
-  position: fixed;
+  position: fixed;   /* 🔥 cheia */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1; /* Stă în spatele textului */
+  height: 100vh;
+  z-index: -2;       /* sub content */
+  overflow: hidden;
 }
 
 .video-sticky::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.6); /* 🔥 mai premium */
   z-index: 1;
 }
 
