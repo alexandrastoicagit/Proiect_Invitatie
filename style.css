@@ -106,14 +106,15 @@ body {
   background: transparent;
 }
 
-.bg-video {
+#bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
+  pointer-events: none;
 }
 
 .veil::before {
@@ -121,10 +122,11 @@ body {
   position: fixed;
   inset: 0;
   background: rgba(255,255,255,0.35);
-  z-index: -1;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.content {
+#content {
   position: relative;
   z-index: 1;
 }
