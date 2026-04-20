@@ -859,7 +859,7 @@ section {
 .content.left {
   text-align: right;
   justify-self: end;   /* 🔥 mută conținutul spre linia centrală */
-  margin-right: 10px;  /* spațiu mic față de linie */
+  margin-right: 10px;  /* spațiu mic față de linie ceva */
 }
 
 .content.right {
