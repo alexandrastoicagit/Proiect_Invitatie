@@ -163,26 +163,38 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 900px;
-  margin: 40px auto;
+  margin: 50px auto;
   align-items: center;
   position: relative;
 }
 
-/* blocuri */
+/* fiecare bloc */
 .parent-block {
   width: 100%;
 }
 
-/* STÂNGA (mireasă) */
+/* MIREASA (stânga) */
 .parent-block.left {
   text-align: right;
-  padding-right: 30px;
+  padding-right: 25px;
 }
 
-/* DREAPTA (mire) */
+/* MIRELE (dreapta) */
 .parent-block.right {
   text-align: left;
-  padding-left: 30px;
+  padding-left: 25px;
+}
+
+/* titluri */
+.parent-block h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* nume */
+.parent-block p {
+  font-size: 14px;
+  margin: 0;
 }
 
 .parents::before {
@@ -577,20 +589,61 @@ section {
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 768px) {
+
   .parents {
-    grid-template-columns: 1fr 1fr; /* rămân pe același rând */
-    gap: 20px;
+    grid-template-columns: 1fr 1fr; /* NU se schimbă */
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 30px auto;
   }
 
+  .parent-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* MIREASA */
   .parent-block.left {
+    align-items: flex-end;   /* IMPORTANT */
     text-align: right;
     padding-right: 15px;
   }
 
+  /* MIRELE */
   .parent-block.right {
+    align-items: flex-start; /* IMPORTANT */
     text-align: left;
     padding-left: 15px;
+  }
+
+  .parent-block h3 {
+    font-size: 14px;
+  }
+
+  .parent-block p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   EXTRA FIX PENTRU iPhone PRO MAX
+========================= */
+
+@media screen and (min-width: 400px) and (max-width: 430px) {
+
+  .parents {
+    padding: 0 25px;
+  }
+
+  .parent-block.left {
+    padding-right: 20px;
+  }
+
+  .parent-block.right {
+    padding-left: 20px;
   }
 }
 
