@@ -114,35 +114,32 @@ html, body {
 }
 
 .bg-video {
-    position: fixed;
+    position: fixed; /* Aceasta este cheia: îl fixează pe ecran */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    z-index: -1; /* Îl trimite în spatele textului */
+    z-index: -1; /* Îl trimite în spatele conținutului */
     overflow: hidden;
+    pointer-events: none; /* Previne blocarea click-urilor pe butoane */
 }
 
 #bg-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Face video-ul să se comporte ca un background-size: cover */
 }
 
+/* Modifică overlay-ul video-ului pentru a fi puțin mai vizibil textul */
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: -5;
-  pointer-events: none;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25); /* 0.25 este un voal fin care ajută textul să iasă în evidență */
+    z-index: -5;
+    pointer-events: none;
 }
 
-h2, h3, p {
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-}
 
 section {
     min-height: 100vh;
@@ -172,7 +169,10 @@ section {
   position: relative;
   z-index: 1;
   background: transparent;
+}
 
+#content, .veil {
+    background: transparent !important;
 }
 
 /* NUME (BOHEME FLORAL) */
